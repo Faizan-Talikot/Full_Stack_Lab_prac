@@ -1,40 +1,48 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './App.css';
 import Form from './components/Form';
 import Increment from './components/Increment';
 import Timer from './components/Timer';
 import Calculation from './components/Calculation';
+import {ThemeContext, ThemeProvider} from './components/ThemeContext';
+import ThemeDisplay from './components/ThemeDisplay';
+import ThemeButton from './components/ThemeButton';
+
 
 function App() {
-  const [dark, setDark] = useState(false); // Added setDark to allow state change
 
-  // Effect to update body styles when dark mode changes
-  useEffect(() => {
-    document.body.style.backgroundColor = dark ? 'black' : 'white';
-    document.body.style.color = dark ? 'white' : 'black';
-  }, [dark]);
+  const {theme} = useContext(ThemeContext);
+
+  useEffect(()=>{
+    if(theme === 'dark'){
+      document.body.style.backgroundColor = '#333';
+      document.body.style.color = 'white';
+    }
+    else{
+      document.body.style.backgroundColor = 'white';
+      document.body.style.color = 'black';
+    }
+  },[theme])
 
   return (
-    <div className="App" style={{ background: dark ? 'black' : 'white', minHeight: "100vh", padding: "20px" }}>
-      <button 
-        onClick={() => setDark(prevDark => !prevDark)} 
-        style={{
-          padding: "10px",
-          marginBottom: "20px",
-          background: dark ? "#444" : "#ddd",
-          color: dark ? "white" : "black",
-          border: "none",
-          cursor: "pointer"
-        }}
-      >
-        Toggle Theme
-      </button>
-      {/* <Increment darks={dark} />
-      <Form darks={dark} /> */}
-      {/* <Timer/> */}
+    <>
+       <Increment />
+      <Form  />
+      <Timer/>
       <Calculation/>
-    </div>
+  
+    
+      <div>
+        <h1>Theme Switcher</h1>
+        <ThemeButton/>
+        <ThemeDisplay/>
+      </div>
+   </>
   );
 }
 
-export default App;
+export default () => (
+  <ThemeProvider>
+    <App />
+  </ThemeProvider>
+);

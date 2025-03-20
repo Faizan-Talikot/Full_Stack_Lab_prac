@@ -3,16 +3,15 @@ import React, { useState } from 'react';
 const Form = ({ darks }) => {
     const [name, setName] = useState("");
     const [age, setAge] = useState("");
+
     const [dark, setDark] = useState(darks);
 
-    // Effect to update body background color when dark mode changes
     
 
     return (
         <div style={{
             textAlign: "center", 
             padding: "20px", 
-            background: dark ? "#333" : "#f5f5f5", 
             borderRadius: "10px",
             maxWidth: "300px",
             margin: "auto",
@@ -37,6 +36,7 @@ const Form = ({ darks }) => {
             <br />
             <div><b>Name:</b> {name}</div>
             <div><b>Age:</b> {age}</div>
+            <button type="submit">Submit</button>
         </div>
     );
 }
