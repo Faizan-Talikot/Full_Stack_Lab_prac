@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Form from './components/Form';
 import Increment from './components/Increment';
+import Timer from './components/Timer';
 
 function App() {
   const [dark, setDark] = useState(false); // Added setDark to allow state change
@@ -27,8 +28,9 @@ function App() {
       >
         Toggle Theme
       </button>
-      <Increment darks={dark} />
-      <Form darks={dark} />
+      {/* <Increment darks={dark} />
+      <Form darks={dark} /> */}
+      <Timer/>
     </div>
   );
 }
