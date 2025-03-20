@@ -10,7 +10,7 @@ const Timer = () => {
         return () =>{
             clearInterval(interval);
         }
-    },[])
+    },[]);
   return (
     <div>Seconds: {timer}</div>
   )

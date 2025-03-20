@@ -3,6 +3,7 @@ import './App.css';
 import Form from './components/Form';
 import Increment from './components/Increment';
 import Timer from './components/Timer';
+import Calculation from './components/Calculation';
 
 function App() {
   const [dark, setDark] = useState(false); // Added setDark to allow state change
@@ -30,7 +31,8 @@ function App() {
       </button>
       {/* <Increment darks={dark} />
       <Form darks={dark} /> */}
-      <Timer/>
+      {/* <Timer/> */}
+      <Calculation/>
     </div>
   );
 }
