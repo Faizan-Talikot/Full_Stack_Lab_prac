@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.btn1{
+    margin: 20px;
+    color: green;
+    font-size: 50px;
+}
+
+.btn2{
+  margin: 20px;
+  color: red;
+  font-size: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.count{
+  display: inline;
+  font-size: 30px;
+}
