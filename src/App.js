@@ -26,14 +26,14 @@ function App() {
 
   return (
     <>
-       <Increment />
+       {/* <Increment />
       <Form  />
       <Timer/>
-      <Calculation/>
+      <Calculation/> */}
   
     
       <div>
-        <h1>Theme Switcher</h1>
+        {/* <h1>Theme Switcher</h1>  */}
         <ThemeButton/>
         <ThemeDisplay/>
       </div>
